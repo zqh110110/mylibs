@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>chart</title>
+</head>
+
+<body style="margin:0 0 0 0;">
+    <canvas id="canvas" width="100%" height="100%" style="background:#f4f4f4;">!!!</canvas>
+    <script src="bundle.js"></script>
+    <div id='inp'><button type="button" onclick="render.zoomOut()">放大</button><button type="button" onclick="render.zoomIn()">缩小</button><button type="button" onclick="render.zoomDefault()">还原</button></div>
+
+</body>
+
+</html>
