@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res/com.example.customview01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/button_mv"
+        android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:text="MACD"
+         android:onClick="macd"
+        > </Button>
+    <Button
+        android:id="@+id/button_scale"
+        android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:layout_toRightOf="@+id/button_mv"
+         android:text="line"
+         android:onClick="scale"
+        > </Button>
+     <Button
+        android:id="@+id/button_update"
+        android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:layout_toRightOf="@+id/button_scale"
+         android:text="upd"
+         android:onClick="update"
+        ></Button>
+      <Button
+        android:id="@+id/button_prepend"
+        android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:layout_toRightOf="@+id/button_update"
+         android:text="MA"
+         android:onClick="prepend"
+        ></Button>
+      <Button
+        android:id="@+id/button_cross"
+        android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:layout_toRightOf="@+id/button_prepend"
+         android:text="cross"
+         android:onClick="cross"
+        ></Button>
+      <Button
+        android:id="@+id/button_cgData"
+        android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:layout_toRightOf="@+id/button_cross"
+         android:text="cgd"
+         android:onClick="changeData"
+        ></Button>
+    <com.shisj.kline.view.ChartView 
+        android:id="@+id/kchart"
+        android:layout_below="@+id/button_mv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

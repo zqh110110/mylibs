@@ -1,0 +1,90 @@
+﻿<html charset="utf-8">
+<head>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<style>
+		ul li{
+			float: left;
+			width: 100px;
+			height: 30px;
+			background: rgb(164, 164, 229);
+			font-size: 24px;
+			color: white;
+		}
+		ul{
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+<div>K线图测试，这是web页面，旋转可以看到辅助线</div>
+</br>
+<ul>
+	<li>1分钟</li>
+	<li>5分钟</li>
+	<li>1小时</li>
+</ul>
+	
+<script>
+ 	
+	kline.setDefaultTimeFormat("MM-dd HH:mm|MM-dd HH:mm|MM-dd HH:mm|MM-dd HH:mm|MM-dd HH:mm|MM-dd HH:mm|MM-dd HH:mm");
+	kline.setPriceDigit(4);
+	function chooseTrsType(){
+		
+		kline.setDataType("CHN/DHH","MM/dd","M1");
+		//document.getElementById('aa').innerHTML=new Date().getSeconds();
+		return false;
+	}
+
+
+	function chooseCicleUnit(type){
+		var fmt="",dType="";
+		if(type==0){
+			fmt="HH:mm";
+			dType="0";//分时图
+		}else if(type==1){
+			fmt="MM-dd HH:mm";
+			dType="1";//
+		}else if(type==2){
+			fmt="MM/dd HH:mm";
+			dType="3";
+		}else if(type==3){
+			fmt="yyyy-MM-dd";
+			dType="4";
+		}else if(type==4){
+			fmt="yyyy-MM-dd";
+			dType="5";
+		}else if(type==5){
+			fmt="yyyy-MM";
+			dType="6";
+		}
+		// document.getElementById('aa').innerHTML=type+(new Date());
+		kline.changeChart("KC");
+		kline.setDataType("EURUSD",dType);
+		
+		//document.getElementById('aa').innerHTML=new Date().getSeconds();
+		return false;
+	}
+	function update(){
+		kline.beginUpdate();
+		return false;
+	}
+	function hidechart(){
+		kline.hidechart();	
+	}
+
+	function showchart(){
+		kline.showchart(100,600);
+		chooseCicleUnit(1);
+		return false;
+	}
+
+	showchart(0);
+ 	setTimeout(function(){
+ 		kline.beginUpdate();
+ 	},5000);
+	window.androidKChartRotate=function(i){
+		document.getElementById("sellButton1").innerHTML="hehe"+new Date()+"  "+i;
+	}
+</script>
+</body>
+</html>

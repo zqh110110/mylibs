@@ -1,0 +1,39 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:kchart="http://schemas.android.com/apk/res/com.ixgsoft.space"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <WebView 
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:layout_weight="1"
+		    android:id="@+id/webView"
+		    />
+   
+    <com.shisj.kline.view.ChartView
+	        android:id="@+id/kchart"
+	        android:layout_width="fill_parent"
+	        android:layout_height="200dp"
+	        android:layout_gravity="bottom"
+	        android:visibility="invisible"
+	       />
+    	
+     <ListView 
+        android:id="@+id/list"
+        android:layout_width="40dp"
+        android:layout_height="fill_parent"
+        android:background="@android:color/black"
+        android:gravity="center"
+        ></ListView>
+     
+     <ListView 
+        android:id="@+id/assistListView"
+        android:layout_width="50dp"
+        android:layout_height="fill_parent"
+        android:background="@color/black"
+        android:layout_gravity="right"
+        android:gravity="center"
+        ></ListView>
+	
+</FrameLayout>
