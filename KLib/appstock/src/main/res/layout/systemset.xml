@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#eeeeee">
+
+    <include layout="@layout/title"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff">
+        <RelativeLayout
+            android:id="@+id/msglayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="消息通知"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/teltextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView1"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="22dp"
+                  android:textColor="#000000" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/teltextView2"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrows" />
+
+    </RelativeLayout>
+    <TextView
+            android:id="@+id/textView2"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+     
+                  android:background="#cccccc" />
+    <RelativeLayout
+        android:id="@+id/assistlayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="辅助功能"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/qqtextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView1"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="22dp"
+                  android:textColor="#000000" />
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/qqtextView2"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrows" />
+
+    </RelativeLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+     
+                  android:background="#cccccc" />
+         <RelativeLayout
+             android:id="@+id/helplayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="帮助中心"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/emailtextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView1"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="22dp"
+                  android:textColor="#000000" />
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/emailtextView2"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrows" />
+
+    </RelativeLayout>
+     <TextView
+            android:id="@+id/textView2"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+     
+                  android:background="#cccccc" />
+         <RelativeLayout
+             android:id="@+id/ablayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="关于我们"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/emailtextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView1"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="22dp"
+                  android:textColor="#000000" />
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/emailtextView2"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrows" />
+
+    </RelativeLayout>
+     <TextView
+            android:id="@+id/textView2"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+     
+                  android:background="#cccccc" />
+         <RelativeLayout
+             android:id="@+id/exitlayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="退出登录"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/emailtextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView1"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="22dp"
+                  android:textColor="#000000" />
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/emailtextView2"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrows" />
+
+    </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/mainbg" >
+    
+    <include  layout="@layout/title"/>
+ <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+               
+            
+          >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/maintwotop" >
+
+                    <Button
+                        android:id="@+id/newsbutton1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/xt_kk"
+                        android:text="财经要闻"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/newsbutton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/xt_kk"
+                        android:text="道富观点" />
+                </RelativeLayout>
+                
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.12" >
+
+                     <com.kfd.ui.PullToRefreshListView
+      					  android:id="@+id/pullToRefreshListView1"
+       						 style="@style/widget_listview"
+       						 android:visibility="visible" >
+    					</com.kfd.ui.PullToRefreshListView>
+    					<com.kfd.ui.PullToRefreshListView
+      					  android:id="@+id/pullToRefreshListView2"
+       						 style="@style/widget_listview"
+       						 android:visibility="gone" >
+    					</com.kfd.ui.PullToRefreshListView> 
+
+            
+
+            </FrameLayout>
+        </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/emoji_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="155dp"
+        android:background="@drawable/lmall_emoji_background"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/circle_1_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/circle_1_1"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_select" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_1_2"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_1_3"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_1_4"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_1_5"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_1_6"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_1_7"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_1_8"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_1_9"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/circle_2_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/circle_2_1"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_select" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_2_2"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_2_3"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_2_4"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_2_5"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_2_6"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/circle_3_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/circle_3_1"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_select" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_3_2"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_3_3"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_3_4"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_3_5"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_3_6"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_3_7"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_3_8"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_3_9"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_3_10"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_3_11"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/circle_4_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/circle_4_1"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_select" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_4_2"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_4_3"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_4_4"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_4_5"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/circle_5_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/circle_5_1"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_select" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_5_2"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_5_3"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_5_4"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/lmall_circle_normal" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_5_5"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_5_6"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_5_7"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_5_8"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_5_9"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp" >
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/circle_5_10"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginRight="5dp" >
+            </ImageView>
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="54dp"
+        android:background="@drawable/lmall_emoji_category_background"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/smail_btn"
+            android:layout_width="50dp"
+            android:layout_height="54dp"
+            android:background="@drawable/lmall_smail_select" >
+        </Button>
+
+        <Button
+            android:id="@+id/flowers_btn"
+            android:layout_width="50dp"
+            android:layout_height="54dp"
+            android:background="@drawable/lmall_flowers_normal" >
+        </Button>
+
+        <Button
+            android:id="@+id/bells_btn"
+            android:layout_width="50dp"
+            android:layout_height="54dp"
+            android:background="@drawable/lmall_bells_normal" >
+        </Button>
+
+        <Button
+            android:id="@+id/cars_btn"
+            android:layout_width="50dp"
+            android:layout_height="54dp"
+            android:background="@drawable/lmall_cars_normal" >
+        </Button>
+
+        <Button
+            android:id="@+id/numbers_btn"
+            android:layout_width="50dp"
+            android:layout_height="54dp"
+            android:background="@drawable/lmall_number_normal" >
+        </Button>
+
+        <Button
+            android:id="@+id/delete_btn"
+            android:layout_width="50dp"
+            android:layout_height="54dp"
+            android:background="@drawable/lmall_emoji_delete_btn" >
+        </Button>
+    </LinearLayout>
+</LinearLayout>

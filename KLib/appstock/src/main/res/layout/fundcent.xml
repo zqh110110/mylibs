@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainbg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="30dp" >
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custbg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        style="@style/fundcent_but_text"
+                        android:text="账户资金:" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        style="@style/fundcent_but_text1"
+                        android:text="@string/wait" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/line" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        style="@style/fundcent_but_text"
+                        android:text="净值:" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        style="@style/fundcent_but_text1"
+                        android:text="@string/wait" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/line" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        style="@style/fundcent_but_text"
+                        android:text="占用资金:" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        style="@style/fundcent_but_text1"
+                        android:text="@string/wait" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/line" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        style="@style/fundcent_but_text"
+                        android:text="可用资金:" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        style="@style/fundcent_but_text1"
+                        android:text="@string/wait" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/line" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        style="@style/fundcent_but_text"
+                        android:text="总净盈亏:" />
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        style="@style/fundcent_but_text1"
+                        android:text="@string/wait" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/line" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        style="@style/fundcent_but_text"
+                        android:text="爆仓点:" />
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        style="@style/fundcent_but_text1"
+                        android:text="@string/wait" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/line" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="15dp" >
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        style="@style/fundcent_but_text"
+                        android:text="爆仓比例:" />
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        style="@style/fundcent_but_text1"
+                        android:text="@string/wait" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/line" />
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+</LinearLayout>

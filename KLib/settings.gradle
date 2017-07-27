@@ -1,1 +1,1 @@
-include ':kline', ':kline4android'
+include /*':kline', ':kline4android', ':pickwheel', */':appstock'

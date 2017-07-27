@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    tools:context=".AccessCenterActivity">
+
+    
+    <!-- app:textColor=""
+           app:textSize=""  default 12sp
+           app:selectedColor="" 指示线条的颜色
+           app:unselectedColor="" 没有选中的颜色
+           app:selectedHeight=""   default 3dp
+           app:unSelectedHeight="" default 1dp       // note ： selectedHeight must be greater than unSelectedHeight
+           app:paddingLeft=""   default 20dp
+           app:paddingRight=""  default 20dp
+           app:paddingTop=""    default 10dp
+           app:paddingBottom=""  default 10dp-->
+    <include layout="@layout/title"/>
+    
+    <com.kfd.adapter.TabPageIndicator
+        android:id="@+id/indicator"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0" 
+        app:textSize="12sp"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vpager"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+</LinearLayout>

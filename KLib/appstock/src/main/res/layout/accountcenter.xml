@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#FFFFFF" 
+    >
+        
+<include layout="@layout/title"/>
+	
+<ScrollView 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:scrollbarStyle="insideOverlay" 
+    
+    >
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    >
+	
+	    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="horizontal"
+	    android:paddingLeft="17dp"
+    	android:paddingRight="10dp"
+    	android:paddingTop="15dp"
+	    >
+	    
+	    <ImageView
+	            android:id="@+id/imageView2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/user" 
+	            android:padding="7dp"/>
+	    <TextView
+		      android:layout_width="wrap_content"
+		      android:layout_height="wrap_content"
+		      android:text="用户名:"
+		      android:textColor="#ff646464"
+		      android:textSize="22dip" />
+	    <TextView
+	          android:id="@+id/username"
+	           android:text="@string/wait"
+		      android:layout_width="wrap_content"
+		      android:layout_height="wrap_content"
+		      android:singleLine="true"
+		      android:textColor="#ff646464"
+		      android:textSize="22dip" />
+	    </LinearLayout>
+		
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="match_parent"
+	        android:layout_marginTop="10dp"
+	        android:background="@color/graywhite"
+	        android:orientation="horizontal" >
+
+	      <LinearLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:orientation="vertical"
+		    >
+	        <TextView
+	            android:id="@+id/stock"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/wait"
+	            android:ems="5"
+	            android:singleLine="true"
+	            android:gravity="center"
+	            android:layout_gravity="center_horizontal"
+	            android:textColor="@color/titlecolor"
+	            android:textSize="@dimen/text_size_22" />
+	        
+	        <TextView
+	            android:id="@+id/textView2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	             android:layout_gravity="center_horizontal"
+	            android:text="A股资金（元）"
+	            android:textColor="@color/black"
+	            android:textSize="16dip" />
+
+	        
+	        </LinearLayout>
+	        <View
+	            android:id="@+id/line"
+	            android:layout_width="1.0dip"
+	            android:layout_height="45.0dip"
+	            android:layout_gravity="center_vertical"
+	            android:background="#802b2b2b" />
+		
+			
+	       <LinearLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:orientation="vertical"
+		    >
+	        <TextView
+	            android:id="@+id/futures"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center_horizontal"
+	            android:text="@string/wait"
+	            android:ems="5"
+	            android:singleLine="true"
+	            android:gravity="center"
+	            android:textColor="@color/titlecolor"
+	            android:textSize="@dimen/text_size_22" />
+	        
+	        <TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center_horizontal"
+	            android:text="期货资金（元）"
+	            android:textColor="@color/black"
+	            android:textSize="16dip" />
+
+			</LinearLayout>
+	    </LinearLayout>
+	    
+	    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:paddingLeft="20dp"
+    	android:paddingRight="10dp"
+    	android:paddingTop="15dp"
+	    >
+	       
+	        <TextView
+		      android:layout_width="wrap_content"
+		      android:layout_height="wrap_content"
+		      android:text="  交易中心"
+		      android:textColor="@color/titlecolor"
+		      android:textSize="22dip" />
+	        
+	        <LinearLayout 
+        android:id="@+id/line2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:orientation="vertical"
+        >
+        
+        <LinearLayout
+            android:id="@+id/stock_center"
+            android:layout_width="fill_parent"
+       	 	android:layout_height="wrap_content"
+        	android:orientation="horizontal"
+        	android:background="@drawable/navtop"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+       	 		android:layout_height="fill_parent"
+       	 		android:text="沪深A股"
+       	 		android:layout_weight="1"
+       	 		android:paddingLeft="10dp"
+       	 		android:textColor="@color/black_half"
+       	 		android:gravity="center_vertical"
+       	 		android:textSize="@dimen/text_size_22"
+                />
+            
+             <ImageView
+            				android:layout_width="wrap_content"
+        					android:layout_height="wrap_content"        	     	
+        					android:scaleType="matrix"
+        					android:padding="12dp" 
+        					android:layout_gravity="center_vertical"
+        					android:clickable="true"
+        					android:src="@drawable/arrows" />  
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:id="@+id/futures_center"
+            android:layout_width="fill_parent"
+       	 	android:layout_height="wrap_content"
+        	android:orientation="horizontal"
+        	android:background="@drawable/navtop"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+       	 		android:layout_height="fill_parent"
+       	 		android:text="沪深300"
+       	 		android:textColor="@color/black_half"
+       	 		android:layout_weight="1"
+       	 		android:paddingLeft="10dp"
+       	 		android:gravity="center_vertical"
+       	 		android:textSize="@dimen/text_size_22"
+                />
+            
+             <ImageView
+            				android:layout_width="wrap_content"
+        					android:layout_height="wrap_content"        	     	
+        					android:scaleType="matrix"
+        					android:padding="12dp" 
+        					android:layout_gravity="center_vertical"
+        					android:clickable="true"
+        					android:src="@drawable/arrows" />   
+        </LinearLayout>
+        
+        <View
+            android:id="@+id/titleline"
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dp"
+             android:background="@color/gray_line"
+            />
+	   </LinearLayout>
+	        
+	        
+	    
+			 <TextView
+		      android:layout_width="wrap_content"
+		      android:layout_height="wrap_content"
+		      android:text="  基本信息"
+		      android:textColor="@color/titlecolor"
+		      android:layout_marginTop="15dp"
+		      android:textSize="22dip" />
+
+	<LinearLayout 
+        android:id="@+id/line2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:orientation="vertical"
+        >
+        
+        <LinearLayout
+            android:id="@+id/info"
+            android:layout_width="fill_parent"
+       	 	android:layout_height="wrap_content"
+        	android:orientation="horizontal"
+        	android:background="@drawable/navtop"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+       	 		android:layout_height="fill_parent"
+       	 		android:text="个人资料"
+       	 		android:layout_weight="1"
+       	 		android:paddingLeft="10dp"
+       	 		android:textColor="@color/black_half"
+       	 		android:gravity="center_vertical"
+       	 		android:textSize="@dimen/text_size_22"
+                />
+            
+             <ImageView
+            				android:layout_width="wrap_content"
+        					android:layout_height="wrap_content"        	     	
+        					android:scaleType="matrix"
+        					android:padding="12dp" 
+        					android:layout_gravity="center_vertical"
+        					android:clickable="true"
+        					android:src="@drawable/arrows" />  
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:id="@+id/safe"
+            android:layout_width="fill_parent"
+       	 	android:layout_height="wrap_content"
+        	android:orientation="horizontal"
+        	android:background="@drawable/navtop"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+       	 		android:layout_height="fill_parent"
+       	 		android:text="账户安全"
+       	 		android:textColor="@color/black_half"
+       	 		android:layout_weight="1"
+       	 		android:paddingLeft="10dp"
+       	 		android:gravity="center_vertical"
+       	 		android:textSize="@dimen/text_size_22"
+                />
+            
+             <ImageView
+            				android:layout_width="wrap_content"
+        					android:layout_height="wrap_content"        	     	
+        					android:scaleType="matrix"
+        					android:padding="12dp" 
+        					android:layout_gravity="center_vertical"
+        					android:clickable="true"
+        					android:src="@drawable/arrows" />   
+        </LinearLayout>
+        
+        <View
+            android:id="@+id/titleline"
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dp"
+             android:background="@color/gray_line"
+            />
+	   </LinearLayout>
+			<TextView
+		      android:layout_width="wrap_content"
+		      android:layout_height="wrap_content"
+		      android:layout_marginTop="15dp"
+		      android:text="  账户信息"
+		      android:textColor="@color/titlecolor"
+		      android:textSize="22dip" />
+	
+	        <LinearLayout 
+        android:id="@+id/line2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:orientation="vertical"
+        >
+        
+        <LinearLayout
+            android:id="@+id/accountmoney"
+            android:layout_width="fill_parent"
+       	 	android:layout_height="wrap_content"
+        	android:orientation="horizontal"
+        	android:background="@drawable/navtop"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+       	 		android:layout_height="fill_parent"
+       	 		android:text="账户资金"
+       	 		android:layout_weight="1"
+       	 		android:paddingLeft="10dp"
+       	 		android:textColor="@color/black_half"
+       	 		android:gravity="center_vertical"
+       	 		android:textSize="@dimen/text_size_22"
+                />
+            
+             <ImageView
+            				android:layout_width="wrap_content"
+        					android:layout_height="wrap_content"        	     	
+        					android:scaleType="matrix"
+        					android:padding="12dp" 
+        					android:layout_gravity="center_vertical"
+        					android:clickable="true"
+        					android:src="@drawable/arrows" />  
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:id="@+id/center"
+            android:layout_width="fill_parent"
+       	 	android:layout_height="wrap_content"
+        	android:orientation="horizontal"
+        	android:background="@drawable/navtop"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+       	 		android:layout_height="fill_parent"
+       	 		android:text="存取中心"
+       	 		android:textColor="@color/black_half"
+       	 		android:layout_weight="1"
+       	 		android:paddingLeft="10dp"
+       	 		android:gravity="center_vertical"
+       	 		android:textSize="@dimen/text_size_22"
+                />
+            
+             <ImageView
+            				android:layout_width="wrap_content"
+        					android:layout_height="wrap_content"        	     	
+        					android:scaleType="matrix"
+        					android:padding="12dp" 
+        					android:layout_gravity="center_vertical"
+        					android:clickable="true"
+        					android:src="@drawable/arrows" />   
+        </LinearLayout>
+        
+         <LinearLayout 
+            android:id="@+id/detail"
+            android:layout_width="fill_parent"
+       	 	android:layout_height="wrap_content"
+        	android:orientation="horizontal"
+        	android:background="@drawable/navtop"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+       	 		android:layout_height="fill_parent"
+       	 		android:text="财务明细"
+       	 		android:textColor="@color/black_half"
+       	 		android:layout_weight="1"
+       	 		android:paddingLeft="10dp"
+       	 		android:gravity="center_vertical"
+       	 		android:textSize="@dimen/text_size_22"
+                />
+            
+             <ImageView
+            				android:layout_width="wrap_content"
+        					android:layout_height="wrap_content"        	     	
+        					android:scaleType="matrix"
+        					android:padding="12dp" 
+        					android:layout_gravity="center_vertical"
+        					android:clickable="true"
+        					android:src="@drawable/arrows" />   
+        </LinearLayout>
+        
+        <View
+            android:id="@+id/titleline"
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dp"
+             android:background="@color/gray_line"
+            />
+	   </LinearLayout>
+			
+	        
+	        <Button
+                android:id="@+id/exit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/buttonred"
+                android:gravity="center"
+                android:text="退出账号"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_18" />
+	         </LinearLayout>
+	</LinearLayout>
+	</ScrollView>
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/datelayout1"
+    android:layout_width="46dp"
+    android:layout_height="25dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/datetextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        
+        android:textColor="#999999"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/weektextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        
+        android:textColor="#999999"
+        android:textSize="8dp" />
+
+</LinearLayout>

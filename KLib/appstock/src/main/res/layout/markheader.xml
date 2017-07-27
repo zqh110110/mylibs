@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#EEEEEE"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#ffffff" >
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="2dp"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp" >
+
+        <RelativeLayout
+            android:id="@+id/kuaixunlayout"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal" >
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="7dp"
+                android:layout_alignParentBottom="true"
+                android:background="#A1A1A1" />
+
+            <ImageView
+                android:id="@+id/zhiboiv"
+                android:layout_width="fill_parent"
+                android:layout_height="11dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/arrowstyle_up_reg" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="14dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="快讯直播"
+                android:textColor="#636363"
+                android:textSize="12dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tradetacticslayout"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal" >
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="7dp"
+                android:layout_alignParentBottom="true"
+                android:background="#A1A1A1" />
+
+            <ImageView
+                android:id="@+id/tradetacticsiv"
+                android:layout_width="fill_parent"
+                android:layout_height="11dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/arrowstyle_up_reg"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/jiaoyi_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_horizontal"
+                android:text="交易策略"
+                android:textColor="#636363"
+                android:textSize="12dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/financecalendarlayout"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal" >
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="7dp"
+                android:layout_alignParentBottom="true"
+                android:background="#A1A1A1" />
+
+            <ImageView
+                android:id="@+id/financecaiv"
+                android:layout_width="fill_parent"
+                android:layout_height="11dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/arrowstyle_up_reg"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/cai_jing_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_horizontal"
+                android:text="财经日历"
+                android:textColor="#636363"
+                android:textSize="12dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/datelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="#ffffff"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/datelayout1"
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/datetextView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/weektextView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#999999"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/datelayout2"
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/datetextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/weektextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#999999"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/datelayout3"
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/datetextView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/weektextView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#999999"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/datelayout4"
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/datetextView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/weektextView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#999999"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/datelayout5"
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/datetextView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/weektextView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#999999"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/datelayout6"
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/datetextView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/weektextView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#999999"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/datelayout7"
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/datetextView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/weektextView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#999999"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/datelayout8"
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/datetextView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/weektextView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#999999"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/datelayout9"
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/datetextView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/weektextView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#999999"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/datelayout10"
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/datetextView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/weektextView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#999999"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/datelayout11"
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/datetextView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/weektextView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#999999"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/datelayout12"
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/datetextView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/weektextView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#999999"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/datelayout13"
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/datetextView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/weektextView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#999999"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/datelayout14"
+                android:layout_width="46dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/datetextView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/weektextView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#999999"
+                    android:textSize="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout>

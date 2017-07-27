@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+       android:background="@drawable/mainbg">
+    
+    <include layout="@layout/title" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" 
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+            
+               <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+              >
+
+                <TextView
+                    android:id="@+id/textView4"
+                    style="@style/rigister_text"
+                    android:text="*真实姓名:" />
+
+                <EditText
+                    android:id="@+id/nameEdit"
+                    style="@style/rigister_edit" 
+                     >
+                </EditText>
+            </LinearLayout>
+             
+      <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:id="@+id/textView6"
+                    style="@style/rigister_text"
+                    android:text="*电子邮箱:" />
+
+                <EditText
+                    android:id="@+id/emailEdit"
+                    
+                    style="@style/rigister_edit" >
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout8"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" 
+                   android:visibility="gone"
+                >
+
+                <TextView
+                    android:id="@+id/textView7"
+                    style="@style/rigister_text"
+                    android:text="*QQ号码:  " />
+
+                <EditText
+                    android:id="@+id/qqEdit"
+                    style="@style/rigister_edit"
+                    android:numeric="integer"
+                    />
+
+            </LinearLayout>
+            
+            
+                   <LinearLayout
+                android:id="@+id/linearLayout9"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                 >
+
+                <TextView
+                    android:id="@+id/textView8"
+                    style="@style/rigister_text"
+                    android:text="*身份证号  " />
+
+                <EditText
+                    android:id="@+id/idcardedit"
+                    style="@style/rigister_edit"
+                  
+                    />
+
+            </LinearLayout>
+                 <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="重要！提款时验证作用，请谨慎填写"
+                android:textSize="12dp" 
+                />
+                   
+                   <LinearLayout
+                android:id="@+id/linearLayout10"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                 >
+
+                <TextView
+                    android:id="@+id/textView9"
+                    style="@style/rigister_text"
+                    android:text="*提款密码  " />
+
+                <EditText
+                    android:id="@+id/moneypwedit"
+                    style="@style/rigister_edit"
+                  	android:numeric="integer"
+                    />
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="（6个数字组合）重要！提款时的唯一密码凭证，请谨慎填写！"
+                android:textSize="12dp"
+                 />
+                   <LinearLayout
+                android:id="@+id/linearLayout11"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" 
+                >
+
+                <TextView
+                    android:id="@+id/textView10"
+                    style="@style/rigister_text"
+                    android:text="*银行卡号 " />
+
+                <EditText
+                    android:id="@+id/moneycardnumedit"
+                    style="@style/rigister_edit"
+                  
+                    />
+
+            </LinearLayout>
+                <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="（请输入16-19位有效的数字)提款时的卡号凭证，请谨慎填写！"
+                android:textSize="12dp" 
+                />    
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="5dp" 
+                   android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/testEdit"
+                    style="@style/rigister_text"
+                    android:text="*验证码:    " />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                     style="@style/rigister_edit" >
+
+                    <EditText
+                        android:id="@+id/edit8"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.4"
+                        android:ems="10"
+                        android:singleLine="true"
+                        android:textColor="@color/gray_white" />
+
+                    <ImageView
+                        android:id="@+id/imgview"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" 
+                android:paddingTop="10dp" 
+                   android:visibility="gone">
+
+                <TextView
+                    style="@style/rigister_text"
+                    android:text="(字母不区分大小写)" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    style="@style/rigister_text"
+                    android:text="看不清,点图片" 
+                    android:layout_marginLeft="15dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                   android:visibility="gone"
+                >
+
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我已阅读并同意" 
+                    android:textSize="@dimen/text_size_15"
+                    android:checked="true"/>
+
+                <TextView
+                    android:id="@+id/textView10"
+                    style="@style/rigister_text"
+                    android:text="@string/rigister" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/btn1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/loginbg_regsi"
+                    android:text="提  交"
+                    android:textColor="#3e4960"
+                    android:textSize="@dimen/text_size_15" />
+
+                <Button
+                    android:id="@+id/btn2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/loginbg_regsi"
+                    android:text="取  消"
+                    android:textColor="#3e4960"
+                    android:textSize="@dimen/text_size_15" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    
+</LinearLayout>

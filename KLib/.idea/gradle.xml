@@ -8,8 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/kline" />
-            <option value="$PROJECT_DIR$/kline4android" />
+            <option value="$PROJECT_DIR$/appstock" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

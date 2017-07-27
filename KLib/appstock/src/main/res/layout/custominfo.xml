@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/include1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        layout="@layout/title" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/include1"
+        android:layout_centerHorizontal="true" >
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+           
+            android:layout_centerHorizontal="true"
+             android:layout_centerVertical="true"  >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:padding="10dp"
+                android:orientation="vertical"
+                  android:gravity="center" >
+                
+          
+
+                <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/textView1"                  
+                        android:text="用户ID:"
+                        style="@style/info_text" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                     style="@style/info_text1" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:background="@drawable/line" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"            
+                    android:background="@drawable/navtop">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                         style="@style/info_text"
+                        
+                        android:text="用户名:"
+                        
+                         />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        style="@style/info_text1"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/navtop"
+                     >
+
+                    <TextView
+                        android:id="@+id/textView5"
+                         style="@style/info_text"
+                        android:text="姓 名:"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        style="@style/info_text1"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/imageView3"
+                    android:layout_marginTop="10dp"
+                      android:visibility="gone"
+ >
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        style="@style/info_text"
+                        android:text="性 别:"
+                         />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                         style="@style/info_text1"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/imageView4"
+                    android:layout_marginTop="10dp"
+                      android:visibility="gone"
+                   >
+
+                    <TextView
+                        android:id="@+id/textView9"
+                         style="@style/info_text"
+                        android:text="国 家:"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView10"
+                         style="@style/info_text1" />
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:id="@+id/linearLayout6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/navtop"
+                    android:orientation="horizontal"
+                     >
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="wrap_content"
+                    	 android:layout_height="fill_parent" 
+                    	 android:textColor="@color/black_half"
+                    	 android:paddingLeft="10dp"
+                    	  android:singleLine="true"
+                    	 android:gravity="center_vertical"
+                    	 android:textSize="@dimen/text_size_18"
+                        android:text="联系电话: "
+                       />
+
+                    <TextView
+                        android:id="@+id/textView12"
+                         android:layout_width="wrap_content"
+                    	 android:layout_height="fill_parent" 
+                    	 android:textColor="@color/black_half"
+                    	 android:singleLine="true"
+                    	 android:gravity="center_vertical"
+                    	 android:textSize="@dimen/text_size_18"
+                    	 android:text="@string/wait"
+                    	 />
+                    <TextView
+                        android:id="@+id/checkphone"
+                         android:layout_width="wrap_content"
+                   		 android:layout_height="fill_parent"
+                   		 android:textColor="@color/titlecolor"
+                   		 android:layout_marginLeft="20dp"
+                   		 android:gravity="center"
+                   		  android:singleLine="true"
+                    	 android:textSize="@dimen/text_size_18"
+                   		 android:text="@string/wait"
+                   		  />
+                </LinearLayout>
+                
+                
+
+                <LinearLayout
+                    android:id="@+id/linearLayout7"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/navtop"
+                    android:orientation="horizontal"
+                     >
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                    	 android:layout_height="fill_parent" 
+                    	 android:textColor="@color/black_half"
+                    	 android:paddingLeft="10dp"
+                    	  android:singleLine="true"
+                    	 android:gravity="center_vertical"
+                    	 android:textSize="@dimen/text_size_18"
+                        android:text="邮箱:"
+                       />
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="wrap_content"
+                    	 android:layout_height="fill_parent" 
+                    	 android:textColor="@color/black_half"
+                    	 android:singleLine="true"
+                    	 android:gravity="center_vertical"
+                    	 android:textSize="@dimen/text_size_18"
+                    	 android:text="@string/wait"/>
+                    
+                    <TextView
+                        android:id="@+id/checkemail"
+                        android:layout_width="wrap_content"
+                   		 android:layout_height="fill_parent"
+                   		 android:textColor="@color/titlecolor"
+                   		 android:layout_marginLeft="5dp"
+                   		 android:gravity="center"
+                   		  android:singleLine="true"
+                    	 android:textSize="@dimen/text_size_18"
+                   		 android:text="@string/wait"
+                   		  />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout9"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/navtop"
+                     >
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        style="@style/info_text"
+                        android:text="QQ:"
+                       />
+
+                    <TextView
+                        android:id="@+id/textView18"
+                         style="@style/info_text1" />
+                </LinearLayout>
+                
+                
+                <LinearLayout
+                    android:id="@+id/linearLayout9"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/navtop"
+                    android:orientation="horizontal"
+                     >
+
+                    <TextView
+                        android:id="@+id/bank"
+                        android:layout_width="wrap_content"
+                    	 android:layout_height="fill_parent" 
+                    	 android:textColor="@color/black_half"
+                    	 android:paddingLeft="10dp"
+                    	  android:singleLine="true"
+                    	 android:gravity="center_vertical"
+                    	 android:textSize="@dimen/text_size_18"
+                        android:text="银行账户:"
+                       />
+
+                    <TextView
+                        android:id="@+id/banktext"
+                        android:layout_width="wrap_content"
+                    	 android:layout_height="fill_parent" 
+                    	 android:textColor="@color/black_half"
+                    	 android:singleLine="true"
+                    	 android:gravity="center_vertical"
+                    	 android:textSize="@dimen/text_size_18"
+                    	 android:text="@string/wait"
+                    	 />
+                    <TextView
+                        android:id="@+id/checkbanktext"
+                         android:layout_width="wrap_content"
+                   		 android:layout_height="fill_parent"
+                   		 android:textColor="@color/titlecolor"
+                   		 android:layout_marginLeft="3dp"
+                   		 android:gravity="center"
+                   		  android:singleLine="true"
+                    	 android:textSize="@dimen/text_size_18"
+                   		  android:text="@string/wait"
+                   		  />
+                </LinearLayout>
+
+                <View
+		            android:id="@+id/titleline"
+		            android:layout_width="fill_parent"
+		            android:layout_height="0.1dp"
+		             android:background="@color/gray_line"
+		            />
+                
+          
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

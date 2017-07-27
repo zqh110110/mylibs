@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="280dp"
+    android:layout_height="200dp"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical"
+    android:padding="20dp" >
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="个股查询"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/imageview12"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/sure_cancel"
+        android:text="@string/confirm"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/button2"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/RelativeLayout2"
+        android:background="@drawable/sure_cancel"
+        android:text="@string/cancel"
+        android:textColor="@color/white" />
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/RelativeLayout2"
+        android:layout_below="@+id/imageview12"
+        android:layout_marginTop="21dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/edtText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="股票代码:"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/edtText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView1"
+            android:background="#ffffff"
+            android:textColor="@color/gray_white" >
+
+            <requestFocus />
+        </EditText>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageview12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/RelativeLayout2"
+        android:layout_below="@+id/RelativeLayout2"
+        android:paddingTop="8dp"
+        android:src="@drawable/line" />
+
+</RelativeLayout>

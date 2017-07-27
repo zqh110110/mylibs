@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="35dp"
+    android:cacheColorHint="#000000"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal"
+    android:background="#DAEDF3" 
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp">
+
+    <TextView
+        android:id="@+id/codingName"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:singleLine="true"
+        android:text="@string/wait"
+         style="@style/marketlisttile"/>
+
+    <com.kfd.ui.InterceptScrollContainer
+        android:id="@+id/scroollContainter"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/codingName"
+        android:focusable="false" >
+
+        <com.kfd.ui.MyHScrollView
+            android:id="@+id/horizontalScrollView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:scrollbars="none" >
+            
+            <!-- private TextView codingName;//编码名称
+	private TextView buyingTime;//建仓时间
+	private TextView type;      //类型
+	private TextView buyingPrice; //建仓价
+	private TextView count;        //数量
+	private TextView closeOutPrice; //平仓价
+	private TextView buildsFee;//建仓费
+	private TextView closeOutFee;//平仓费
+	private TextView forceCloseOut;//强制平仓费
+	private TextView hotPoundage;//热门手续费
+	private TextView highPriceFee;//高涨跌幅费	
+	private TextView keepWarehouseFee;//留仓费
+	private TextView profit ;  //盈亏
+	private TextView numbers;   //单号 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/buyingTime"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/wait"
+                   style="@style/marketlisttile" />
+
+                <TextView
+                    android:id="@+id/type"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/wait"
+                     style="@style/marketlisttile" />
+
+                <TextView
+                    android:id="@+id/buyingPrice"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/wait"
+                     style="@style/marketlisttile"/>
+
+                <TextView
+                    android:id="@+id/count"
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/wait"
+                     style="@style/marketlisttile"/>
+
+                <TextView
+                    android:id="@+id/closeOutPrice"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/wait"
+                    style="@style/marketlisttile" />
+
+                <TextView
+                    android:id="@+id/buildsFee"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/wait"
+                    style="@style/marketlisttile"/>
+
+                <TextView
+                    android:id="@+id/closeOutFee"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/wait"
+                   style="@style/marketlisttile" />
+
+                <TextView
+                    android:id="@+id/forceCloseOut"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/wait"
+                     style="@style/marketlisttile"/>
+
+                <TextView
+                    android:id="@+id/hotPoundage"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/wait"
+                    style="@style/marketlisttile" />
+
+                <TextView
+                    android:id="@+id/highPriceFee"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/wait"
+                    style="@style/marketlisttile"/>
+
+                <TextView
+                    android:id="@+id/keepWarehouseFee"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/wait"
+                     style="@style/marketlisttile"/>
+
+                <TextView
+                    android:id="@+id/profit"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/wait"
+                   style="@style/marketlisttile"/>
+
+                <TextView
+                    android:id="@+id/numbers"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/wait"
+                     style="@style/marketlisttile"/>
+            </LinearLayout>
+        </com.kfd.ui.MyHScrollView>
+    </com.kfd.ui.InterceptScrollContainer>
+
+</RelativeLayout>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+
+        <include layout="@layout/title" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/message_board_edit_rl"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_below="@+id/title_bar_rl"
+                android:layout_weight="1"
+                android:background="@android:color/white" >
+
+                <EditText
+                    android:id="@+id/edit_et"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@android:color/white"
+                    android:clickable="true"
+                    android:gravity="top"
+                    android:hint="这一刻的想法..."
+                    android:paddingLeft="2dip"
+                    android:paddingTop="2dip"
+                    android:textColor="#141414"
+                    android:textSize="16dp" />
+
+                <RelativeLayout
+                    android:id="@+id/message_board_prompt_rl"
+                    android:layout_width="278dip"
+                    android:layout_height="36dip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dip"
+                    android:background="@drawable/prompt_update_bg"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:id="@+id/prompt_ib"
+                        android:layout_width="21dip"
+                        android:layout_height="18dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dip"
+                        android:background="@drawable/prompt_update_icon" />
+
+                    <TextView
+                        android:id="@+id/prompt_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dip"
+                        android:layout_toRightOf="@+id/prompt_ib"
+                        android:text="上传中..."
+                        android:textColor="#986313"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/message_board_post_rl"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:layout_below="@+id/message_board_edit_rl"
+                android:background="#F3EFEB"
+                android:gravity="center_vertical" >
+
+                <ImageView
+                    android:id="@+id/expression_add_iv"
+                    android:layout_width="33dip"
+                    android:layout_height="33dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dip"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/face_ico" />
+
+                <RelativeLayout
+                    android:id="@+id/photo_add_rl"
+                    android:layout_width="40dip"
+                    android:layout_height="40dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="8dip"
+                    android:layout_toRightOf="@+id/expression_add_iv" >
+
+                    <ImageView
+                        android:id="@+id/photo_add_iv"
+                        android:layout_width="33dip"
+                        android:layout_height="33dip"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/pic_ico"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/photo_add_num_btn"
+                        android:layout_width="20.5dip"
+                        android:layout_height="20.5dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:background="@drawable/message_board_photo_num"
+                        android:text="4"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:text="120字"
+                    android:textColor="#4d4d4d"
+                    android:textSize="12dp" />
+            </RelativeLayout>
+
+            <GridView
+                android:id="@+id/message_board_photo_gv"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="#E8E8E8"
+                android:columnWidth="82dip"
+                android:gravity="center"
+                android:horizontalSpacing="3dp"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="3"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="3dp" >
+            </GridView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/footer_for_emoticons"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/keyboard_height"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal"
+        android:visibility="gone" />
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:isScrollContainer="false" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:isScrollContainer="false"
+            android:orientation="vertical" >
+
+               <FrameLayout
+          
+                android:layout_width="fill_parent"
+                android:layout_height="0.0px"
+                android:layout_weight="1.0"
+                android:isScrollContainer="false" >
+            
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+              
+                android:isScrollContainer="false" />
+             <RelativeLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:isScrollContainer="false" >
+             
+                     		
+             </RelativeLayout>
+     </FrameLayout>
+         
+           <!--  android:showDividers="none" -->
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="51dp"
+                android:divider="@null"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bottom_background"
+                android:gravity="center"
+                android:isScrollContainer="false" />
+
+        </LinearLayout>
+    </TabHost>
+
+    
+
+
+</RelativeLayout>

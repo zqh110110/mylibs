@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B7BCE"
+    android:orientation="vertical" >
+
+   <ListView
+        android:id="@+id/lv_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="#00000000"
+        android:listSelector="@drawable/button_blue" >
+    </ListView>
+
+</LinearLayout>

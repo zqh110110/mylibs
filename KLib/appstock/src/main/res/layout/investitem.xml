@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="horizontal"
+    android:paddingTop="10dp" >
+
+    <com.kfd.ui.RoundImageView
+        android:id="@+id/roundImageView1"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="11dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/nametextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#0172db"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/contenttextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#4d4d4d"
+            android:textSize="12dp" />
+
+        <com.kfd.ui.MyGridView
+            android:id="@+id/fresh_news_photo_gv"
+            android:layout_width="287dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:horizontalSpacing="5dp"
+            android:listSelector="#ffffffff"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="5dp"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical" >
+
+            <LinearLayout
+                android:id="@+id/ll_like_reply_click"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/priseimageview"
+                    android:layout_width="16dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/praise_ico" >
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/fresh_news_reply_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="3dp"
+                    android:text="赞"
+                    android:textColor="#808080"
+                    android:textSize="10dp" >
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/fresh_news_praise_iv"
+                    android:layout_width="16dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/comment_ico" >
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/comment_count_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="10dip"
+                    android:text="评论"
+                    android:textColor="#808080"
+                    android:textSize="10dp" >
+                </TextView>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/time_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:text="1分钟前"
+                android:textColor="#b3b3b3"
+                android:textSize="9dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/spline"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:background="#E1E1E1" />
+
+        <LinearLayout
+            android:id="@+id/priselayout"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="4dp" >
+
+            <ImageView
+                android:id="@+id/fresh_news_praise_iv"
+                android:layout_width="16dp"
+                android:layout_height="15dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/praise_green_ico" >
+            </ImageView>
+
+            <TextView
+                android:id="@+id/comment_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="10dip"
+                android:text="2436"
+                android:textColor="#00ab9e"
+                android:textSize="12dp" >
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="10dip"
+                android:text="觉得很赞"
+                android:textColor="#808080"
+                android:textSize="12dp" >
+            </TextView>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:cacheColorHint="@null"
+            android:divider="@drawable/list_divider_line"
+            android:dividerHeight="0.0dip"
+            android:fadingEdge="none"
+            android:focusable="false"
+            android:listSelector="#00000000"
+            android:scrollingCache="false" >
+        </ListView>
+
+        <TextView
+            android:id="@+id/showmoretextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看更多评论"
+            android:textColor="#0172db"
+            android:textSize="7dp" />
+    </LinearLayout>
+
+</LinearLayout>

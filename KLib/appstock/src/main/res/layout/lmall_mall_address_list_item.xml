@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF" >
+
+    <RelativeLayout
+        android:id="@+id/address_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="52dip"
+        android:layout_marginTop="10dip" >
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:maxLines="1" 
+            android:maxLength="5"
+            android:ellipsize="end"   
+            android:text="asdf"
+            android:textColor="@color/lmall_midBlack"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/is_idcard_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dip"
+            android:layout_toRightOf="@+id/name_tv"
+            android:drawableLeft="@drawable/lmall_idcard_icon"
+            android:text="【已认证】"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/phone_number_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_toLeftOf="@+id/is_idcard_tv"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="12345678921"
+            android:textColor="@color/lmall_midBlack"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/address_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_tv"
+            android:layout_marginTop="13dip"
+            android:minLines="2"
+            android:textColor="@color/lmall_midBlack"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/address_select_iv"
+        android:layout_width="24dip"
+        android:layout_height="24dip"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dip"
+        android:background="@drawable/lmall_mall_address_select_flag"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/right_arrow_iv"
+        android:layout_width="20dip"
+        android:layout_height="20dip"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dip"
+        android:background="@drawable/lmall_right_arrow"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.0dip"
+        android:layout_below="@+id/address_rl"
+        android:layout_marginTop="10dip"
+        android:background="#ECECEC" />
+
+</RelativeLayout>

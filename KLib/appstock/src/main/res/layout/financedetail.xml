@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/white" 
+    >
+    
+     <include layout="@layout/title"/>
+    
+    <LinearLayout 
+        android:id="@+id/line2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical"
+        >
+        
+        <LinearLayout
+            android:id="@+id/Pay"
+            android:layout_width="fill_parent"
+       	 	android:layout_height="wrap_content"
+        	android:orientation="horizontal"
+        	android:background="@drawable/navtop"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+       	 		android:layout_height="fill_parent"
+       	 		android:text="近三个月充值记录"
+       	 		android:layout_weight="1"
+       	 		android:paddingLeft="10dp"
+       	 		android:textColor="@color/black_half"
+       	 		android:gravity="center_vertical"
+       	 		android:textSize="@dimen/text_size_22"
+                />
+            
+             <ImageView
+            				android:layout_width="wrap_content"
+        					android:layout_height="wrap_content"        	     	
+        					android:scaleType="matrix"
+        					android:padding="12dp" 
+        					android:layout_gravity="center_vertical"
+        					android:clickable="true"
+        					android:src="@drawable/arrows" />  
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:id="@+id/getmoney"
+            android:layout_width="fill_parent"
+       	 	android:layout_height="wrap_content"
+        	android:orientation="horizontal"
+        	android:background="@drawable/navtop"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+       	 		android:layout_height="fill_parent"
+       	 		android:text="近三个月取款记录"
+       	 		android:textColor="@color/black_half"
+       	 		android:layout_weight="1"
+       	 		android:paddingLeft="10dp"
+       	 		android:gravity="center_vertical"
+       	 		android:textSize="@dimen/text_size_22"
+                />
+            
+             <ImageView
+            				android:layout_width="wrap_content"
+        					android:layout_height="wrap_content"        	     	
+        					android:scaleType="matrix"
+        					android:padding="12dp" 
+        					android:layout_gravity="center_vertical"
+        					android:clickable="true"
+        					android:src="@drawable/arrows" />   
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:id="@+id/apply"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+       	 	android:layout_height="wrap_content"
+        	android:orientation="horizontal"
+        	android:background="@drawable/navtop"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+       	 		android:layout_height="fill_parent"
+       	 		android:text="近三个月取款申请"
+       	 		android:textColor="@color/black_half"
+       	 		android:layout_weight="1"
+       	 		android:paddingLeft="10dp"
+       	 		android:gravity="center_vertical"
+       	 		android:textSize="@dimen/text_size_22"
+                />
+            
+             <ImageView
+            				android:layout_width="wrap_content"
+        					android:layout_height="wrap_content"        	     	
+        					android:scaleType="matrix"
+        					android:padding="12dp" 
+        					android:layout_gravity="center_vertical"
+        					android:clickable="true"
+        					android:src="@drawable/arrows" />  
+        </LinearLayout>
+        
+        <View
+            android:id="@+id/titleline"
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dp"
+             android:background="@color/gray_line"
+            />
+        
+        
+    </LinearLayout>
+</LinearLayout>
