@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/element-ui/1.2.7/theme-default/index.css">
+    <link rel="stylesheet" href="css/flex.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- 引入组件库 -->
+    <script src="//cdn.bootcss.com/vue/2.2.6/vue.min.js"></script>
+    <script src="//cdn.bootcss.com/axios/0.16.0/axios.min.js"></script>
+    <script src="//cdn.bootcss.com/element-ui/1.2.7/index.js"></script>
+    <style>
+        .avatar-uploader .el-upload {
+            border: 1px dashed #d9d9d9;
+            border-radius: 6px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .avatar-uploader .el-upload:hover {
+            border-color: #20a0ff;
+        }
+        .avatar-uploader-icon {
+            font-size: 28px;
+            color: #8c939d;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+        }
+        .avatar {
+            width: 70px;
+            height: 70px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <el-dialog title="app打包配置" v-model="appconfigDialog">
+        <el-form ref="ruleForm" :model="appconfig" :rules="rules">
+            <el-form-item label="应用名称" label-width="120px" prop="appName">
+                <el-input v-model="appconfig.appName" auto-complete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="应用图标" label-width="120px" prop="picPath">
+                <el-upload
+                        class="avatar-uploader"
+                        action="/upload"
+                        :show-file-list="false"
+                        :on-success="handleAvatarSuccess"
+                        :before-upload="beforeAvatarUpload">
+                    <img v-if="appconfig.picPath" :src="pic" class="avatar">
+                    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                </el-upload>
+                </el-input>
+            </el-form-item>
+            <el-form-item label="版本名称" label-width="120px" prop="versionName">
+                <el-input v-model="appconfig.versionName" auto-complete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="版本号" label-width="120px" prop="versionCode">
+                <el-input v-model="appconfig.versionCode" auto-complete="off"></el-input>
+            </el-form-item>
+        </el-form>
+        <div slot="footer" class="dialog-footer">
+            <el-button @click="appconfigDialog = false">取 消</el-button>
+            <el-button type="primary" @click="submitForm('ruleForm')">确 定</el-button>
+        </div>
+    </el-dialog>
+    <el-dialog title="分析师修改" v-model="analystDialog">
+        <el-form ref="ruleForm2" action="/updateanalyst" method="post" :rules="rules2" label-position="left" label-width="120px" :model="formLabelAlign">
+            <el-form-item label="分析师名称" prop="analystName">
+                <el-input name="analystName" v-model="formLabelAlign.analystName" ></el-input>
+            </el-form-item>
+            <el-form-item label="分析师密码" prop="password">
+                <el-input name="password" v-model="formLabelAlign.password" ></el-input>
+            </el-form-item>
+            <el-form-item label="appKey" prop="appkey">
+                <el-input name="appkey" v-model="formLabelAlign.appkey" ></el-input>
+            </el-form-item>
+        </el-form>
+        <div slot="footer" class="dialog-footer">
+            <el-button @click="analystDialog = false">取 消</el-button>
+            <el-button type="primary" @click="submitForm2('ruleForm2')">确 定</el-button>
+        </div>
+    </el-dialog>
+<el-card  >
+    <div slot="header" class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>分析师列表</strong></div>
+    <el-input v-model="keyword" placeholder="请输入过滤内容" style="width:240px"></el-input>
+    <el-button type="primary" icon="search" @click="getData">搜索</el-button>
+    <el-table
+            :data="tableData"
+            border
+            tooltip-effect="dark"
+            style="width: 100%;margin-top: 20px"
+            @selection-change="handleSelectionChange">
+        <el-table-column
+                type="selection"
+                width="55">
+        </el-table-column>
+        <el-table-column
+                label="名称"
+                width="220">
+            <template scope="scope">{{ scope.row.analystName }}</template>
+        </el-table-column>
+        <el-table-column
+                prop="appkey"
+                label="appKey"
+                width="180">
+        </el-table-column>
+        <el-table-column
+                prop="password"
+                label="密码"
+                show-overflow-tooltip>
+        </el-table-column>
+        <el-table-column
+                fixed="right"
+                label="操作"
+                width="280">
+            <template scope="scope">
+                <div style="display: inline-block;margin-right: 10px;">
+                    <i v-if="scope.row.buildinfoId" class="el-icon-check" style="color: #03b6fd;size: 6px"></i>
+                    <div v-if="!scope.row.buildinfoId" style="display:inline-block;width:20px"></div>
+                    <el-button @click="pkgConfig(scope.$index, tableData)" type="text" size="small">打包设置</el-button>
+                </div>
+                <el-button @click="editAnalyst(scope.$index, tableData)" type="text" size="small">编辑</el-button>
+                <el-button @click="delAnalyst(scope.$index, tableData)" type="text" size="small">删除</el-button>
+                <el-button @click="packageApp(scope.$index, tableData)" type="text" size="small">打包</el-button>
+                <el-button v-if="scope.row.temp" @click="downPage(scope.row.temp)" type="text" size="small"><i class="fa fa-cloud-download"></i></el-button>
+
+            </template>
+        </el-table-column>
+    </el-table>
+    <div flex="main:center cross:center" style="height:50px">
+        <el-pagination
+                @size-change="handleSizeChange"
+                @current-change="handleCurrentChange"
+                :current-page="currentPage"
+                :page-sizes="[10, 20, 30, 40]"
+                :page-size="pageSize"
+                layout="total, sizes, prev, pager, next, jumper"
+                :total="count">
+        </el-pagination>
+    </div>
+</el-card>
+</div>
+</div>
+</body>
+<script th:inline="javascript">
+/*<![CDATA[*/
+    var result = [[${result}]];
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            dialogwidth:"120px",
+            tableData: [[${analysts}]],
+            multipleSelection: [],
+            currentPage:1,
+            pageSize:10,
+            keyword:"",
+            count:[[${count}]],
+            appconfigDialog:false,
+            analystDialog:false,
+            pic:"",
+            appconfig:{
+                appName:'',
+                picPath:'',
+                versionName:[[${appInfoConfig.versionName}]],
+                versionCode:[[${appInfoConfig.versionCode}]],
+                analystId:''
+
+            },
+            rules: {
+                appName: [
+                    { required: true, message: '请输入应用名称', trigger: 'blur' }
+                ],
+                picPath: [
+                    { required: true, message: '请选择应用图标', trigger: 'blur' }
+                ],
+                versionName: [
+                    { required: true, message: '请输入应用版本名称', trigger: 'blur' }
+                ],
+                versionCode: [
+                    { required: true, message: '请输入应用版本号', trigger: 'blur' }
+                ]
+            },
+            formLabelAlign: {
+                id:'',
+                userId:'',
+                analystName: '',
+                password: '',
+                appkey: ''
+            },
+            rules2: {
+                analystName: [
+                    { required: true, message: '请输入分析师名称', trigger: 'blur' }
+                ],
+                password: [
+                    { required: true, message: '请输入分析师密码', trigger: 'blur' }
+                ],
+                appkey: [
+                    { required: true, message: '请输入分析师appKey', trigger: 'blur' }
+                ]
+            }
+        },
+        mounted:function () {
+            this.getData();
+        },
+        methods: {
+            handleSelectionChange:function(val) {
+                this.multipleSelection = val;
+            },
+            handleSizeChange:function(val) {
+                console.log("每页 "+val+" 条");
+                this.pageSize = val;
+                this.getData();
+            },
+            handleCurrentChange:function(val) {
+                this.currentPage = val;
+                console.log("当前页: "+val);
+                this.getData();
+            },
+            getData:function () {
+                var _this = this;
+                var pagenum =this.currentPage;
+                var pagesize = this.pageSize;
+                var keyword = this.keyword;
+                axios.post("/analysts","pageNum="+pagenum+"&pageSize="+pagesize+"&keyword="+keyword).then(function (response) {
+                    _this.tableData = response.data.analysts;
+                    _this.count = response.data.count;
+                }).catch(function (err) {
+                    
+                });
+            },
+            pkgConfig:function (index,datas) {
+                var _this=this;
+                this.appconfig.analystId = datas[index].id;
+                axios.post("/getbuildinfo","analystId=" +this.appconfig.analystId).then(function (res) {
+                    _this.appconfig.appName = '';
+                    _this.appconfig.picPath = '';
+                    _this.pic = '';
+                    if (res.data) {
+                        var info = res.data;
+                        _this.appconfig.versionCode = info.versionCode;
+                        _this.appconfig.versionName = info.versionName;
+                        _this.appconfig.appName = info.appName;
+                        _this.appconfig.picPath = info.picPath;
+                        _this.pic = info.picPath;
+                    }
+                    _this.appconfigDialog = true;
+                })
+            },
+            delAnalyst:function (index,datas) {
+                var _this=this;
+                _this.$confirm('此操作将删除该分析师, 是否继续?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then(function () {
+                    axios.post("/delanalyst","id="+datas[index].id).then(function (response) {
+                        if (response.data=="success") {
+                            _this.$message("分析师删除成功");
+                            _this.getData();
+                        }
+                    })
+            }).catch(function ()  {
+                    this.$message({
+                    type: 'info',
+                    message: '已取消删除'
+                });
+            });
+            },
+            editAnalyst:function (index,datas) {
+                this.formLabelAlign.id = datas[index].id;
+                this.formLabelAlign.userId = datas[index].userId;
+                this.formLabelAlign.analystName = datas[index].analystName;
+                this.formLabelAlign.password = datas[index].password;
+                this.formLabelAlign.appkey = datas[index].appkey;
+                this.analystDialog = true;
+            },
+            packageApp:function (index,datas) {
+                window.location.href="/buildpage?analystId="+datas[index].id;
+            },
+            submitForm:function(formName) {
+                var _this = this;
+                var form = this.$refs[formName];
+                form.validate(function (valid){
+                    if (valid) {
+                        axios.post("/addanalystbuild",JSON.stringify(_this.appconfig), {
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        }).then(function (response) {
+                            if (response.data=="success"){
+                                _this.$message("添加成功！");
+                                _this.appconfigDialog = false;
+                            } else {
+                                _this.$message("添加失败！");
+                            }
+                        })
+                            .catch(function (error) {
+                                console.log(error);
+                            });
+                    } else {
+
+                        return false;
+                    }
+                });
+            },
+            submitForm2:function(formName) {
+                var _this = this;
+                var form = this.$refs[formName];
+                form.validate(function (valid){
+                    if (valid) {
+                        _this.analystDialog = false;
+                        axios.post("/updateanalyst",JSON.stringify(_this.formLabelAlign), {
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        }).then(function (response) {
+                            if (response.data=="success"){
+                                _this.$message("修改成功！");
+                                _this.getData();
+                            } else {
+                                _this.$message("修改失败！");
+                            }
+                        })
+                            .catch(function (error) {
+                                console.log(error);
+                            });
+                    } else {
+
+                        return false;
+                    }
+                });},
+            handleAvatarSuccess:function(res, file) {
+                this.appconfig.picPath = res;
+                this.pic = URL.createObjectURL(file.raw);
+            },
+            beforeAvatarUpload:function(file) {
+                const isPNG = file.type === 'image/png';
+                const isLt500K = file.size/1024  < 500;
+
+                if (!isPNG) {
+                    this.$message.error('上传头像图片只能是 PNG 格式!');
+                }
+                if (!isLt500K) {
+                    this.$message.error('上传头像图片大小不能超过 500KB!');
+                }
+                return isPNG && isLt500K;
+            },
+            downPage:function (url) {
+                location.href=url;
+            }
+        }
+    });
+/*]]>*/
+</script>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/element-ui/1.2.7/theme-default/index.css">
+    <link rel="stylesheet" href="css/flex.css">
+    <!-- 引入组件库 -->
+    <script src="//cdn.bootcss.com/vue/2.2.6/vue.min.js"></script>
+    <script src="//cdn.bootcss.com/axios/0.16.0/axios.min.js"></script>
+    <script src="//cdn.bootcss.com/element-ui/1.2.7/index.js"></script>
+</head>
+<body>
+<el-card id="app" class="panel admin-panel">
+    <div slot="header" class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>分析师列表</strong></div>
+    <el-form ref="ruleForm" action="/addanalyst" method="post" :rules="rules" label-position="left" label-width="120px" :model="formLabelAlign">
+        <el-form-item label="分析师名称" prop="analystName">
+            <el-input name="analystName" v-model="formLabelAlign.analystName" ></el-input>
+        </el-form-item>
+        <el-form-item label="分析师密码" prop="password">
+            <el-input name="password" v-model="formLabelAlign.password" ></el-input>
+        </el-form-item>
+        <el-form-item label="appKey" prop="appkey">
+            <el-input name="appkey" v-model="formLabelAlign.appkey" ></el-input>
+        </el-form-item>
+        <el-form-item>
+            <el-button type="primary" @click="submitForm('ruleForm')">添加</el-button>
+        </el-form-item>
+    </el-form>
+</el-card>
+</body>
+<script th:inline="javascript">
+/*<![CDATA[*/
+    var result = [[${result}]];
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            formLabelAlign: {
+                analystName: '',
+                password: '',
+                appkey: ''
+            },
+            rules: {
+                analystName: [
+                    { required: true, message: '请输入分析师名称', trigger: 'blur' }
+                ],
+                password: [
+                    { required: true, message: '请输入分析师密码', trigger: 'blur' }
+                ],
+                appkey: [
+                    { required: true, message: '请输入分析师appKey', trigger: 'blur' }
+                ]
+            }
+        },
+        mounted:function() {
+            if (result) {
+                this.$message('添加成功！');
+            }
+        },
+        methods: {
+            submitForm:function(formName) {
+                var _this = this;
+                var form = this.$refs[formName];
+                form.validate(function (valid){
+                    if (valid) {
+                        console.log(JSON.stringify(_this.formLabelAlign))
+                        var xhr = axios.post("/addanalyst",JSON.stringify(_this.formLabelAlign), {
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        }).then(function (response) {
+                            if (response.data=="success"){
+                                _this.$message("添加成功！");
+                                _this.formLabelAlign.analystName = '';
+                                _this.formLabelAlign.password = '';
+                                _this.formLabelAlign.appkey = '';
+                            } else {
+                                _this.$message("添加失败！");
+                            }
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                    } else {
+
+                        return false;
+                    }
+                });
+            },
+            getQueryString:function(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) return unescape(r[2]); return null;
+            }
+        }
+    });
+/*]]>*/
+</script>
+</html>

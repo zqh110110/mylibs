@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="renderer" content="webkit">
+<title></title>
+<link rel="stylesheet" href="css/pintuer.css">
+<link rel="stylesheet" href="css/admin.css">
+  <style>
+    .avatar-uploader .el-upload {
+      border: 1px dashed #d9d9d9;
+      border-radius: 6px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      width: 70px;
+      height: 70px;
+    }
+    .avatar-uploader .el-upload:hover {
+      border-color: #20a0ff;
+    }
+    .avatar-uploader-icon {
+      font-size: 28px;
+      color: #8c939d;
+      width: 70px;
+      height: 70px;
+      line-height: 70px;
+      text-align: center;
+    }
+    .avatar {
+      width: 70px;
+      height: 70px;
+      display: block;
+    }
+  </style>
+<script src="js/jquery.js"></script>
+<script src="js/pintuer.js"></script>
+
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
+  <!-- 引入组件库 -->
+  <script src="//unpkg.com/vue/dist/vue.js"></script>
+  <script src="//cdn.bootcss.com/vue-resource/1.2.1/vue-resource.min.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body >
+<div id="app" class="panel admin-panel" v-loading.body="loading">
+  <div class="panel-head"><strong><span class="icon-pencil-square-o"></span> 应用打包</strong></div>
+  <div class="body-content">
+    <form  id="ajaxForm" @submit.prevent="submit" method="post" class="form-x" action="/buildapp" enctype="multipart/form-data" >
+      <div class="form-group" v-if="analystName">
+        <div class="label" >
+          <label>分析师名称：</label>
+        </div>
+        <div class="field">
+          <input type="text" v-model="analystName" class="input"  disabled />
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>应用名称：</label>
+        </div>
+        <div class="field">
+          <input type="text" v-model="appInfo.appName" class="input" name="appName"  data-validate="required:请填写应用名称"/>
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>应用图标：</label>
+        </div>
+
+        <div class="field">
+          <el-upload
+                  class="avatar-uploader"
+                  action="/upload"
+                  :show-file-list="false"
+                  :on-success="handleAvatarSuccess"
+                  :before-upload="beforeAvatarUpload">
+            <img v-if="appInfo.iconpic" :src="appInfo.pic" class="avatar">
+            <i v-else class="icon-plus avatar-uploader-icon"></i>
+          </el-upload>
+          <input id="url1"  :value="appInfo.iconpic" multiple name="iconpic"  data-validate="required:请选择文件,regexp#.+.(png)$:只能上传png格式文件"
+                 type="hidden" />
+            <div id="filetip" class="tips"></div>
+          </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>appKey：</label>
+        </div>
+        <div class="field">
+          <input type="text" v-model="appInfo.appKey" id="appKey" class="input" name="appKey" value="" data-validate="required:请填写appKey"/>
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>应用版本名称：</label>
+        </div>
+        <div class="field">
+          <input type="text" v-model="appInfo.versionName" class="input" name="versionName"  value="" data-validate="required:请填写版本名称"/>
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>应用版本号：</label>
+        </div>
+        <div class="field">
+          <input type="text" v-model="appInfo.versionCode" class="input" name="versionCode"   value="" data-validate="required:请填写应用版本号"/>
+          <div class="tips"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label>是否强制打包：</label>
+        </div>
+        <div class="field" style="vertical-align: middle">
+          <input type="checkbox" v-model="appInfo.forcebuild" name="forcebuild"  />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button class="button bg-main icon-check-square-o" type="button" id="btnAjaxSubmit" @click="buildrun"> 打包</button>
+        </div>
+      </div>
+    </form>
+      <el-dialog title="打包进度" v-model="dialogFormVisible" :close-on-click-modal="false" :show-close="false" :size="full">
+          <el-progress :text-inside="true" :stroke-width="24" :percentage="percentage" :status="status"></el-progress>
+          <p v-html="msg"></p>
+          <div slot="footer" class="dialog-footer">
+
+          </div>
+      </el-dialog>
+  </div>
+</div>
+<template>
+    <el-button :plain="true" :ref="alert"></el-button>
+</template>
+<script th:inline="javascript">
+  /*<![CDATA[*/
+  new Vue({
+      el:'#app',
+      data:{
+          loading: false,
+          percentage:0,
+          status:"",
+          msg:"",
+          dialogFormVisible:false,
+          analystName:[[${analyst!=null?analyst.analystName:''}]],
+          appInfo:{
+              appName:[[${analystBuildinfo!=null?analystBuildinfo.appName:''}]],
+              appKey:[[${analyst!=null?analyst.appkey:''}]],
+              iconpic:[[${analystBuildinfo!=null?analystBuildinfo.picPath:''}]],
+              pic:[[${analystBuildinfo!=null?analystBuildinfo.picPath:''}]],
+              forcebuild:false,
+              versionCode:[[${appInfoConfig.versionCode}]],
+              versionName:[[${appInfoConfig.versionName}]],
+              buildinfoId:"[[${analystBuildinfo!=null?analystBuildinfo.id:''}]]"
+          }
+      },
+      methods:{
+          onFileChange:function(e) {
+              var files = e.target.files || e.dataTransfer.files;
+              if (!files.length)return;
+              this.createImage(files);
+
+          },
+          createImage:function(file) {
+              if(typeof FileReader==='undefined'){
+                  alert('您的浏览器不支持图片上传，请升级您的浏览器');
+                  return false;
+              }
+              this.appInfo.pic = file[0].name;
+              $("#appKey").focus();
+              var image = new Image();
+              var vm = this;
+              var reader = new FileReader();
+              reader.readAsDataURL(file[0]);
+              reader.onload =function(e){
+                  vm.appInfo.iconpic=e.target.result.replace("data:image/png;base64,", "");
+              };
+          },
+      send:function() {
+              var _this = this;
+          _this.percentage = 0;
+          var process = 0;
+              var xhr = new window.XMLHttpRequest();
+              if (!window.XMLHttpRequest) {
+                  try {
+                      xhr = new window.ActiveXObject("Microsoft.XMLHTTP");
+                  } catch (e) {
+                  }
+              }
+              xhr.open("post", "/buildapp");
+              xhr.setRequestHeader('content-type','application/json');
+              var oldSize = 0;
+          _this.dialogFormVisible = true;
+              xhr.onreadystatechange = function () {
+                  if (xhr.readyState > 2) {
+                      var tmpText = xhr.responseText.substring(xhr.responseText.lastIndexOf("!!!!!"));
+                      oldSize = xhr.responseText.length;
+                      _this.msg = tmpText.replace("!!!!!","");
+                      if (tmpText.indexOf("@@fileExists@@")!=-1) {
+                          location.href="/getbuildresult/"+_this.appInfo.appKey+'/'+_this.appInfo.versionName+'/'+_this.appInfo.versionCode;
+                          return;
+                      }
+                      if (tmpText.indexOf("@@apkBuildSuccess@@")!=-1) {
+                          location.href="/getbuildresult/"+_this.appInfo.appKey+'/'+_this.appInfo.versionName+'/'+_this.appInfo.versionCode;
+                          return;
+                      }
+                      if (tmpText.indexOf("@@picUploadErr@@")!=-1) {
+                          _this.openAlert("应用图标生成失败，请检查上传图片是否正确。","error");//success/warning/info/error
+                          return;
+                      }
+                      if (tmpText.indexOf("@@apkBuildFail@@")!=-1) {
+                          _this.openAlert("应用打包失败，请检查上传参数是否正确。","error");//success/warning/info/error
+                          return;
+                      }
+                      if (tmpText.indexOf("@@buildQueueFull@@")!=-1) {
+                          _this.openAlert("服务器应用打包队列已满，请稍候重试。","error");//success/warning/info/error
+                          return;
+                      }
+                      if(tmpText.indexOf("UP-TO-DATE")){
+                          process = process + 5;
+                          if (process>99) {
+                              process = 99;
+                          }
+                          _this.percentage = process;
+                          console.log(_this.percentage)
+                      }
+                  }
+                  if (xhr.readyState == 4) {
+                      // 请求执行完毕
+                      _this.percentage=100;
+                      _this.status= "success";
+                      setTimeout(function () {
+                          _this.dialogFormVisible = false;
+                      },2000);
+                  }
+              }
+//               var args='appKey='+this.appInfo.appKey+'&appName='+this.appInfo.appName+'&iconpic='+this.appInfo.iconpic+'&pic='+this.appInfo.pic+'&forcebuild='+this.appInfo.forcebuild+'&versionCode='+this.appInfo.versionCode+'&versionName='+this.appInfo.versionName;
+                var formData = JSON.stringify(this.appInfo);
+               xhr.send(formData);
+          },
+          buildrun: function() {
+              var _this = this;
+              $("#ajaxForm").ajaxSubmit(function() {
+                  _this.send();
+//                  parent.whir.loading.add("请稍候。。。", 0.3);
+//                  $("#ajaxForm").submit();
+//                  var formData = JSON.stringify(_this.appInfo); // 这里才是你的表单数据
+
+
+//                  $.ajax({
+//                      type: "POST",
+//                      url: "/buildapp",
+//                      data: formData,
+//                      contentType: "application/json; charset=utf-8",
+//                      dataType: "json",
+//                      success: function (data) {
+//                          _this.msg = data;
+//                          if(data.indexOf("UP-TO-DATE")){
+//                              process = process + 1;
+//                              _this.percentage = process*100/20;
+//                              console.log(_this.percentage)
+//                          }
+//
+//                      },
+//                      error: function (msg) {
+//                          console.log(data)
+//                      }
+//                  });
+
+//                  _this.$http.post('/buildapp', formData).then((function (res) {
+//                      window.res=res
+//                      console.log(res)
+//                  },function (res) {
+//
+//                  }));
+              });
+          },
+          openAlert:function(msg,type){//success/warning/info/error
+              this.$message({
+                  showClose: true,
+                  message: msg,
+                  type: type
+              });
+          },
+          handleAvatarSuccess:function(res, file) {
+              $("#filetip").next(".input-help").css("display", "none");
+              this.appInfo.iconpic = res;
+              this.appInfo.pic = URL.createObjectURL(file.raw);
+          },
+          beforeAvatarUpload:function(file) {
+              const isPNG = file.type === 'image/png';
+              const isLt500K = file.size/1024  < 500;
+
+              if (!isPNG) {
+                  this.$message.error('上传头像图片只能是 PNG 格式!');
+              }
+              if (!isLt500K) {
+                  this.$message.error('上传头像图片大小不能超过 500KB!');
+              }
+              return isPNG && isLt500K;
+          }
+      }
+  });
+//  $(function() {
+//      $("#btnAjaxSubmit").click(function() {
+//
+//          $("#ajaxForm").ajaxSubmit(function() {
+//              parent.whir.loading.add("请稍候。。。", 0.3);
+//              $("#ajaxForm").submit();
+//          });
+//      });
+//  });
+
+  /*]]>*/
+
+</script>
+
+</body></html>
